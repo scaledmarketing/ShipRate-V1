@@ -1,0 +1,273 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1a1a2e;
+  line-height: 1.5;
+}
+
+/* ── Nav ── */
+.sr-nav {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.sr-nav__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sr-nav__logo {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: auto;
+}
+
+.sr-nav__shop {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.sr-nav__link {
+  color: #fff;
+  opacity: 0.7;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.sr-nav__link:hover { opacity: 1; }
+
+/* ── Container ── */
+.sr-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* ── Cards ── */
+.sr-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.sr-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ── Forms ── */
+.sr-field {
+  margin-bottom: 14px;
+}
+
+.sr-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.sr-field input, .sr-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.sr-field input:focus, .sr-field select:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.sr-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── Buttons ── */
+.sr-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.sr-btn:hover { opacity: 0.9; }
+
+.sr-btn--sm {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.sr-btn--outline {
+  background: transparent;
+  color: #4f46e5;
+  border: 1px solid #4f46e5;
+}
+
+.sr-btn--outline:hover {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* ── Tables ── */
+.sr-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.sr-table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #888;
+  padding: 8px 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.sr-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.sr-table input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.sr-tier-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ── Progress Bar ── */
+.sr-progress-wrap {
+  margin-bottom: 8px;
+}
+
+.sr-progress {
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.sr-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+.sr-progress__label {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ── Plans ── */
+.sr-plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.sr-plan {
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.sr-plan--active {
+  border-color: #4f46e5;
+  background: #f8f7ff;
+}
+
+.sr-plan h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.sr-plan__price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 4px;
+}
+
+.sr-plan p {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.sr-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── Toast ── */
+.sr-toast {
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ── Muted text ── */
+.sr-muted {
+  color: #999;
+  font-size: 13px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sr-plans { grid-template-columns: 1fr 1fr; }
+  .sr-grid-2 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .sr-plans { grid-template-columns: 1fr; }
+}

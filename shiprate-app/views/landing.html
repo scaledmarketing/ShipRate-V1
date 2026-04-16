@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipRate — Smart Shipping Rates for Shopify</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.6; }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #4f46e5 100%);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; }
+    .hero p { font-size: 20px; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
+    .hero-form { display: flex; gap: 10px; justify-content: center; max-width: 500px; margin: 0 auto; flex-wrap: wrap; }
+    .hero-form input {
+      flex: 1; min-width: 240px; padding: 14px 18px; border: none; border-radius: 8px;
+      font-size: 16px; font-family: inherit;
+    }
+    .hero-form button {
+      padding: 14px 32px; background: #e8a500; color: #fff; border: none; border-radius: 8px;
+      font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit;
+    }
+    .hero-form button:hover { background: #d49500; }
+
+    .features { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+    .features h2 { text-align: center; font-size: 32px; margin-bottom: 40px; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+    .feature { text-align: center; padding: 24px; }
+    .feature-icon { font-size: 40px; margin-bottom: 12px; }
+    .feature h3 { font-size: 18px; margin-bottom: 8px; }
+    .feature p { font-size: 14px; color: #666; }
+
+    .pricing { background: #f4f5f7; padding: 60px 20px; }
+    .pricing h2 { text-align: center; font-size: 32px; margin-bottom: 40px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .price-card { background: #fff; border-radius: 12px; padding: 28px; text-align: center; border: 2px solid #eee; }
+    .price-card--pop { border-color: #4f46e5; transform: scale(1.03); }
+    .price-card h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 8px; }
+    .price-card .price { font-size: 36px; font-weight: 800; color: #1a1a2e; }
+    .price-card .price span { font-size: 16px; font-weight: 400; color: #888; }
+    .price-card .credits { font-size: 14px; color: #666; margin: 8px 0 16px; }
+    .price-card ul { list-style: none; text-align: left; font-size: 13px; color: #555; }
+    .price-card li { padding: 4px 0; }
+    .price-card li::before { content: "✓ "; color: #4f46e5; font-weight: 700; }
+
+    .footer { text-align: center; padding: 40px 20px; color: #999; font-size: 13px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>📦 ShipRate</h1>
+    <p>Get live carrier rates at checkout — then charge your customers what <em>you</em> want. Custom tiers, smart rules, zero complexity.</p>
+    <form class="hero-form" action="/auth" method="GET">
+      <input name="shop" type="text" placeholder="your-store.myshopify.com" required>
+      <button type="submit">Install Free →</button>
+    </form>
+  </div>
+
+  <div class="features">
+    <h2>How It Works</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">🔌</div>
+        <h3>Connect Your Carrier</h3>
+        <p>Link your Aramex, Australia Post, or other carrier account in seconds.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💰</div>
+        <h3>Set Your Tiers</h3>
+        <p>Define what customers pay based on what the carrier actually quotes. Free shipping under $50? Done.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🛒</div>
+        <h3>Rates at Checkout</h3>
+        <p>Customers see your custom rates instantly. No delays, no guesswork, always accurate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing" id="pricing">
+    <h2>Simple Pricing</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <div class="credits">500 credits/mo</div>
+        <ul>
+          <li>All features included</li>
+          <li>1 carrier</li>
+          <li>Community support</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Starter</h3>
+        <div class="price">$39<span>/mo</span></div>
+        <div class="credits">10,000 credits/mo</div>
+        <ul>
+          <li>All features included</li>
+          <li>Unlimited carriers</li>
+          <li>Email support</li>
+          <li>14-day free trial</li>
+        </ul>
+      </div>
+      <div class="price-card price-card--pop">
+        <h3>Growth</h3>
+        <div class="price">$69<span>/mo</span></div>
+        <div class="credits">25,000 credits/mo</div>
+        <ul>
+          <li>All features included</li>
+          <li>Unlimited carriers</li>
+          <li>Priority support</li>
+          <li>14-day free trial</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Scale</h3>
+        <div class="price">$119<span>/mo</span></div>
+        <div class="credits">75,000 credits/mo</div>
+        <ul>
+          <li>All features included</li>
+          <li>Unlimited carriers</li>
+          <li>Dedicated support</li>
+          <li>14-day free trial</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 ShipRate. Built in Australia 🇦🇺</p>
+  </div>
+
+</body>
+</html>
